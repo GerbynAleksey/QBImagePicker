@@ -31,6 +31,7 @@
         self.assetCollectionSubtypes = @[
                                          @(PHAssetCollectionSubtypeSmartAlbumUserLibrary),
                                          @(PHAssetCollectionSubtypeAlbumMyPhotoStream),
+                                         @(PHAssetCollectionSubtypeAlbumCloudShared),
                                          @(PHAssetCollectionSubtypeSmartAlbumPanoramas),
                                          @(PHAssetCollectionSubtypeSmartAlbumVideos),
                                          @(PHAssetCollectionSubtypeSmartAlbumBursts)
