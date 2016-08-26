@@ -277,7 +277,13 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (void)updateDoneButtonState
 {
-    self.doneButton.enabled = [self isMinimumSelectionLimitFulfilled];
+    BOOL minimumLimitFulFilled = [self isMinimumSelectionLimitFulfilled];
+    
+    if (self.doneButton.enabled != minimumLimitFulFilled) {
+        self.doneButton.enabled = minimumLimitFulFilled;
+        [self.navigationItem setRightBarButtonItem:nil animated:YES];
+        [self.navigationItem setRightBarButtonItem:self.doneButton animated:YES];
+    }
 }
 
 
