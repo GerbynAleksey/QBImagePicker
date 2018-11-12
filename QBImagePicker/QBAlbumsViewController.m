@@ -54,7 +54,7 @@
     [super viewWillAppear:animated];
     
     // Configure navigation item
-    self.navigationItem.title = NSLocalizedStringFromTableInBundle(@"title", @"QBImagePicker", self.imagePickerController.assetBundle, nil);
+    self.navigationItem.title = self.imagePickerController.title;
     self.navigationItem.prompt = self.imagePickerController.prompt;
     
     // Show/hide 'Done' button
