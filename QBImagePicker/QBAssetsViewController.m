@@ -517,21 +517,21 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
                     if (numberOfVideos == 1) {
                         result = [NSString stringWithFormat:@"1 Photo, 1 Video"];
                     } else {
-                        result = [NSString stringWithFormat:@"1 Photo, %@ Videos",numberOfVideos];
+                        result = [NSString stringWithFormat:@"1 Photo, %@ Videos",@(numberOfVideos)];
                     }
                 } else if (numberOfVideos == 1) {
-                    result = [NSString stringWithFormat:@"%@ Photos, 1 Video"];
+                    result = [NSString stringWithFormat:@"%@ Photos, 1 Video",@(numberOfPhotos)];
                 } else {
-                    result = [NSString stringWithFormat:@"%@ Photos, %@ Videos"];
+                    result = [NSString stringWithFormat:@"%@ Photos, %@ Videos",@(numberOfPhotos),@(numberOfVideos)];
                 }
                 
-                label.text = [NSString stringWithFormat:format, numberOfPhotos, numberOfVideos];
+                label.text = result;
             }
                 break;
                 
             case QBImagePickerControllerFilterTypePhotos:
             {
-                NSString *result = (numberOfPhotos == 1) ?  [NSString stringWithFormat:@"1 Photo"] : [NSString stringWithFormat:@"%@ Photos",numberOfVideos];
+                NSString *result = (numberOfPhotos == 1) ?  [NSString stringWithFormat:@"1 Photo"] : [NSString stringWithFormat:@"%@ Photos",@(numberOfPhotos)];
                 
                 label.text = result;
             }
@@ -539,7 +539,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
                 
             case QBImagePickerControllerFilterTypeVideos:
             {
-                NSString *result = (numberOfVideos == 1) ?  [NSString stringWithFormat:@"1 Video"] : [NSString stringWithFormat:@"%@ Videos",numberOfVideos];
+                NSString *result = (numberOfVideos == 1) ?  [NSString stringWithFormat:@"1 Video"] : [NSString stringWithFormat:@"%@ Videos",@(numberOfVideos)];
                 
                 label.text = result;
             }
